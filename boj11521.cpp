@@ -1,3 +1,4 @@
+//시발 개잘짰는데 왜 틀렸는지 모르겠다.
 #include <iostream>
 #include <string>
 #include <vector>
