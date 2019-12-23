@@ -10,7 +10,7 @@ const int dy[8] = { -1,0,1,-1,0,1,-1,1 };
 char board[8][8] = { 0 };
 
 bool hasWord(int x, int y, const string& word) {
-	if (x < 0 || y < 0 || x >= D || y >= 5) return false;
+	if (x < 0 || y < 0 || x >= D || y >= D) return false;
 	if (board[y][x] != word[0]) return false;
 
 	if (word.size() == 1) return true;
