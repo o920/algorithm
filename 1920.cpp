@@ -6,28 +6,30 @@ struct Node {
 	Node* next;
 };
 
-Node* hTable[42950];//42949 67259
+Node* hTable[214748];//2147483647
 
 int GetKey(int data) {
-	if (data < 0) return (data / 10000);
-	else return (data / 10000) * 2;
+	if (data < 0) return (data / 10000)*(-1);
+	else return (data / 10000);
 }
 void Insert(int data) {
+	int key = GetKey(data);
 	Node* node = (struct Node*)malloc(sizeof(struct Node));
 	node->data = data;
 	node->next = NULL;
-	Node* origin = hTable[GetKey(data)];
-	if (!origin) hTable[GetKey(data)] = node;
+	Node* origin = hTable[key];
+	if (!origin) hTable[key] = node;
 	else {
-		node->next = hTable[GetKey(data)];
-		hTable[GetKey(data)] = node;
+		node->next = hTable[key];
+		hTable[key] = node;
 	}	
 }
 bool Search(int data) {
-	if (!hTable[GetKey(data)]) return false;
-	if (hTable[GetKey(data)]->data == data) return true;
+	int key = GetKey(data);
+	if (!hTable[key]) return false;
+	if (hTable[key]->data == data) return true;
 	else {
-		Node* temp = hTable[GetKey(data)];
+		Node* temp = hTable[key];
 		while (temp) {
 			if (temp->data == data) return true;
 			temp = temp->next;
@@ -48,7 +50,8 @@ int main() {
 	cin >> M;
 	for (int i = 0; i < M; i++) {
 		int check;
-		cin >> check;
-		cout << Search(check) << endl;
+		scanf("%d", &check);
+		printf("%d\n", Search(check));
 	}
 }
+
