@@ -11,7 +11,6 @@ int main() {
 		for (int j = 0; j < N; j++) {
 			if ((table[0][j] > table[0][i]) && (table[1][j] > table[1][i])) count++;
 		}
-		cout << count << endl;
 		G[i] = count+1;
 	}
 	for (int i = 0; i < N; i++) cout << G[i] << " ";
