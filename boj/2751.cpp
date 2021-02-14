@@ -28,5 +28,5 @@ int main() {
 	nums.resize(n);
 	for (int i = 0; i < n; i++) cin >> nums[i];
 	split(0, n - 1);
-	for (int i = 0; i < n; i++) cout << nums[i] << "\n"; // endl�� �ð� �ʰ�
+	for (int i = 0; i < n; i++) cout << nums[i] << "\n"; // endlÀº ½Ã°£ ÃÊ°ú
 }
