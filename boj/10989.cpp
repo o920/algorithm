@@ -2,7 +2,7 @@
 using namespace std;
 int arr[10001] = { 0, };
 int main() {
-	//ÀÌ°Å ¾È¾²¸é ½Ã°£ÃÊ°ú --------
+	//ì´ê±° ì•ˆì“°ë©´ ì‹œê°„ì´ˆê³¼ --------
 	ios::sync_with_stdio(false);
 	cin.tie(NULL);
 	cout.tie(NULL);
@@ -15,6 +15,6 @@ int main() {
 		arr[temp]++;
 	}
 	for (int i = 1; i < 10001; i++) {
-		for (int j = 1; j <= arr[i]; j++) cout << i << "\n"; // endl ½Ã°£ÃÊ°ú
+		for (int j = 1; j <= arr[i]; j++) cout << i << "\n"; // endl ì‹œê°„ì´ˆê³¼
 	}
 }
