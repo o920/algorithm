@@ -2,21 +2,21 @@
 #include <algorithm>
 using namespace std;
 
-int arr[100]; // ÀÔ·Â¹Þ´Â ¹è¿­
-int ans[100]; // ÃÖ´ë°ø¾à¼öÀÇ ¾à¼ö¸¦ ±¸ÇÏ´Â ¹è¿­
-int gcd(int a, int b) { // ÃÖ´ë°ø¾à¼ö ±¸ÇÏ´Â ÇÔ¼ö
+int arr[100]; // ìž…ë ¥ë°›ëŠ” ë°°ì—´
+int ans[100]; // ìµœëŒ€ê³µì•½ìˆ˜ì˜ ì•½ìˆ˜ë¥¼ êµ¬í•˜ëŠ” ë°°ì—´
+int gcd(int a, int b) { // ìµœëŒ€ê³µì•½ìˆ˜ êµ¬í•˜ëŠ” í•¨ìˆ˜
 	return a % b ? gcd(b, a%b) : b;
 }
 int main() {
-	//ÀÔ·Â¹Þ±â
+	//ìž…ë ¥ë°›ê¸°
 	int n;
 	cin >> n;
 	for (int i = 0; i < n; i++) cin >> arr[i];
-	sort(arr, arr + n); // ¿À¸§Â÷¼ø Á¤·Ä
-	//ÃÖ´ë°ø¾à¼ö ±¸ÇÏ±â, arr[i]-arr[i-1] = M * (arr[i]/M - arr[i-1]/M)
+	sort(arr, arr + n); // ì˜¤ë¦„ì°¨ìˆœ ì •ë ¬
+	//ìµœëŒ€ê³µì•½ìˆ˜ êµ¬í•˜ê¸°, arr[i]-arr[i-1] = M * (arr[i]/M - arr[i-1]/M)
 	int sub = arr[1] - arr[0];
 	for (int i = 2; i < n; i++) sub = gcd(sub, arr[i] - arr[i - 1]);
-	//ÃÖ´ë°ø¾à¼öÀÇ ¾à¼ö ±¸ÇÏ±â
+	//ìµœëŒ€ê³µì•½ìˆ˜ì˜ ì•½ìˆ˜ êµ¬í•˜ê¸°
 	int count = 0;
 	for (int i = 1; i*i <= sub; i++) {
 		if (sub%i == 0) {
@@ -25,7 +25,7 @@ int main() {
 		}
 	}
 	sort(ans, ans + count); 
-	//Ãâ·Â
+	//ì¶œë ¥
 	for (int i = 0; i < count; i++) {
 		if (ans[i] != 1) cout << ans[i] << " ";
 	}
