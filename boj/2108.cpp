@@ -17,16 +17,16 @@ int main() {
 	for (int i = 0; i < N; i++) {
 		cin >> vec[i];
 		mean += vec[i];
-		int temp = (vec[i] <= 0) ? abs(vec[i]) : vec[i] + 4000; // À½¼ö¸é ¹è¿­ 8000°³ Áß ¾Õ¿¡, ¾ç¼ö¸é µÚ¿¡ ÀúÀå
-		vec2[temp]++; // ÀÔ·Â¹ŞÀº ¼ö°¡ ¸î°³ÀÎÁö ¼¼¾î³õ±â
-		if (vec2[temp] > max) max = vec2[temp]; // ºóµµ Á¦ÀÏ ¸¹Àº °Å ÀúÀåÇØ³õ±â
+		int temp = (vec[i] <= 0) ? abs(vec[i]) : vec[i] + 4000; // ìŒìˆ˜ë©´ ë°°ì—´ 8000ê°œ ì¤‘ ì•ì—, ì–‘ìˆ˜ë©´ ë’¤ì— ì €ì¥
+		vec2[temp]++; // ì…ë ¥ë°›ì€ ìˆ˜ê°€ ëª‡ê°œì¸ì§€ ì„¸ì–´ë†“ê¸°
+		if (vec2[temp] > max) max = vec2[temp]; // ë¹ˆë„ ì œì¼ ë§ì€ ê±° ì €ì¥í•´ë†“ê¸°
 	}
 	sort(vec.begin(), vec.end()); 
-	bool isSecond = false; // ºóµµ°¡ ¸¹Àº °Å Áß µÎ¹øÂ°·Î ÀÛÀº ¼ö ¾Ë¾Æ³»´Â º¯¼ö
+	bool isSecond = false; // ë¹ˆë„ê°€ ë§ì€ ê±° ì¤‘ ë‘ë²ˆì§¸ë¡œ ì‘ì€ ìˆ˜ ì•Œì•„ë‚´ëŠ” ë³€ìˆ˜
 	int mode = 0;
 	for (int i = -4000; i <= 4000; i++) {
 		int temp = i <= 0 ? abs(i) : i + 4000;
-		if (vec2[temp] == max) { // if ¹®¿¡ µÎ¹øÂ° °É¸®¸é µÎ¹øÂ°·Î ÀÛÀº ¼ö¸¦ mode¿¡ ÀúÀåÇÏ°í ¹İº¹¹® ºüÁ®³ª¿À±â
+		if (vec2[temp] == max) { // if ë¬¸ì— ë‘ë²ˆì§¸ ê±¸ë¦¬ë©´ ë‘ë²ˆì§¸ë¡œ ì‘ì€ ìˆ˜ë¥¼ modeì— ì €ì¥í•˜ê³  ë°˜ë³µë¬¸ ë¹ ì ¸ë‚˜ì˜¤ê¸°
 			mode = i;
 			if (isSecond) break;
 			isSecond = true;
