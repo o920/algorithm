@@ -1,4 +1,4 @@
-// ÀÌÇ×°è¼ö Á¤ÀÇ ±×´ë·Î ±¸Çö
+// ì´í•­ê³„ìˆ˜ ì •ì˜ ê·¸ëŒ€ë¡œ êµ¬í˜„
 #include <iostream>
 using namespace std;
 int factorial(int n) {
