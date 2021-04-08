@@ -7,7 +7,7 @@
 * 더 이상 두번째 과정을 수행할 수 없을 때까지 반복
 
 ```python
-def dfs(graph, b, visited) :
+def dfs(graph, v, visited) :
   visited[v] = True
   print(v, end='')
   
