@@ -7,7 +7,6 @@ def solution(jobs) :
     while True :
         if not heap and not jobs : break
         for i in jobs :
-            if not jobs : break
             if i[0] > endtime : break
             else : 
                 heapq.heappush(heap,(i[1],i[0]))
